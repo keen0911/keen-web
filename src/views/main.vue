@@ -59,12 +59,12 @@
 						<span slot="title">首页</span>
 					</el-menu-item>
 					<el-submenu
-						index="组织管理"
+						index="我的"
 						:popper-class="'site-sidebar--' + sidebarLayoutSkin + '-popper'"
 					>
 						<template #title>
 							<SvgIcon name="users_fill" class="icon-svg" />
-							<span slot="title">组织管理</span>
+							<span slot="title">我的</span>
 						</template>
 						<el-menu-item
 							index="dept"
@@ -73,7 +73,7 @@
 							ref="ABC"
 						>
 							<SvgIcon name="company_fill" class="icon-svg" />
-							<span slot="title">部门管理</span>
+							<span slot="title">我的大学习</span>
 						</el-menu-item>
 						<el-menu-item
 							index="role"
@@ -81,7 +81,7 @@
 							@click="$router.push({ name: 'Role' })"
 						>
 							<SvgIcon name="role_fill" class="icon-svg" />
-							<span slot="title">角色管理</span>
+							<span slot="title">我的作业</span>
 						</el-menu-item>
 						<el-menu-item
 							index="user"
@@ -89,16 +89,16 @@
 							@click="$router.push({ name: 'User' })"
 						>
 							<SvgIcon name="user_fill" class="icon-svg" />
-							<span slot="title">用户管理</span>
+							<span slot="title">我的课程</span>
 						</el-menu-item>
 					</el-submenu>
 					<el-submenu
-						index="在线办公"
+						index="班委管理"
 						:popper-class="'site-sidebar--' + sidebarLayoutSkin + '-popper'"
 					>
 						<template #title>
 							<SvgIcon name="meeting_fill" class="icon-svg" />
-							<span slot="title">在线办公</span>
+							<span slot="title">班委管理</span>
 						</template>
 						<el-menu-item
 							index="approval"
@@ -106,19 +106,19 @@
 							@click="$router.push({ name: 'Approval' })"
 						>
 							<SvgIcon name="warehouse_fill" class="icon-svg" />
-							<span slot="title">审批任务</span>
+							<span slot="title">作业管理</span>
 						</el-menu-item>
 						<el-menu-item index="leave" @click="$router.push({ name: 'Leave' })">
 							<SvgIcon name="night_fill" class="icon-svg" />
-							<span slot="title">员工请假</span>
+							<span slot="title">班级打卡记录</span>
 						</el-menu-item>
 						<el-menu-item index="amect" @click="$router.push({ name: 'Amect' })">
 							<SvgIcon name="cry_fill" class="icon-svg" />
-							<span slot="title">违纪罚款</span>
+							<span slot="title">大学习管理</span>
 						</el-menu-item>
 						<el-menu-item index="reim" @click="$router.push({ name: 'Reim' })">
 							<SvgIcon name="assurance_fill" class="icon-svg" />
-							<span slot="title">报销管理</span>
+							<span slot="title">班费管理</span>
 						</el-menu-item>
 					</el-submenu>
 
@@ -135,13 +135,6 @@
 							@click="$router.push({ name: 'MeetingRoom' })"
 						>
 							<SvgIcon name="warehouse_fill" class="icon-svg" />
-							<span slot="title">会议室</span>
-						</el-menu-item>
-						<el-menu-item
-							index="demo-echarts"
-							@click="$router.push({ name: 'OfflineMeeting' })"
-						>
-							<SvgIcon name="trust_fill" class="icon-svg" />
 							<span slot="title">线下会议</span>
 						</el-menu-item>
 						<el-menu-item
@@ -161,13 +154,14 @@
 							<SvgIcon name="system_fill" class="icon-svg" />
 							<span slot="title">系统设置</span>
 						</template>
-						<el-menu-item
-							index="amect-type"
-							@click="$router.push({ name: 'AmectType' })"
-						>
-							<SvgIcon name="tool_fill" class="icon-svg" />
-							<span slot="title">罚款类型</span>
-						</el-menu-item>
+            <el-menu-item
+                index="amect-type"
+                v-if="isAuth(['ROOT'])"
+                @click="$router.push({ name: 'AmectType' })"
+            >
+              <SvgIcon name="tool_fill" class="icon-svg" />
+              <span slot="title">班级状态</span>
+            </el-menu-item>
 					</el-submenu>
 				</el-menu>
 			</div>

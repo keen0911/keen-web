@@ -14,22 +14,11 @@
 				<el-select
 					v-model="dataForm.deptId"
 					class="input"
-					placeholder="部门"
+					placeholder="大学习期数"
 					size="medium"
 					clearable="clearable"
 				>
 					<el-option v-for="one in deptList" :label="one.deptName" :value="one.id" />
-				</el-select>
-			</el-form-item>
-			<el-form-item>
-				<el-select
-					v-model="dataForm.typeId"
-					class="input"
-					placeholder="罚款类型"
-					size="medium"
-					clearable="clearable"
-				>
-					<el-option v-for="one in amectTypeList" :label="one.type" :value="one.id" />
 				</el-select>
 			</el-form-item>
 			<el-form-item>
@@ -50,8 +39,8 @@
 					size="medium"
 					clearable="clearable"
 				>
-					<el-option label="未缴纳" value="1" />
-					<el-option label="已缴纳" value="2" />
+					<el-option label="已交" value="1" />
+					<el-option label="未交" value="2" />
 				</el-select>
 			</el-form-item>
 			<el-form-item>
@@ -78,7 +67,7 @@
 					:disabled="!isAuth(['ROOT', 'AMECT:SELECT'])"
 					@click="reportHandle()"
 				>
-					查看报告
+					导出文件
 				</el-button>
 			</el-form-item>
 		</el-form>
@@ -108,16 +97,10 @@
 					<span>{{ (pageIndex - 1) * pageSize + scope.$index + 1 }}</span>
 				</template>
 			</el-table-column>
-			<el-table-column prop="type" header-align="center" align="center" label="罚款类型" />
-			<el-table-column prop="name" header-align="center" align="center" label="当事人" />
-			<el-table-column prop="deptName" header-align="center" align="center" label="所属部门" />
-			<el-table-column header-align="center" align="center" label="罚款金额">
-				<template #default="scope">
-					<span>{{ scope.row.amount }}元</span>
-				</template>
-			</el-table-column>
+			<el-table-column prop="name" header-align="center" align="center" label="姓名" />
+			<el-table-column prop="deptName" header-align="center" align="center" label="期数" />
 			<el-table-column prop="status" header-align="center" align="center" label="状态" />
-			<el-table-column prop="createTime" header-align="center" align="center" label="日期时间" />
+			<el-table-column prop="createTime" header-align="center" align="center" label="提交时间" />
 			<el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
 				<template #default="scope">
 					<el-button

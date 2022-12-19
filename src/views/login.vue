@@ -124,7 +124,10 @@ export default {
 							clearInterval(that.qrCodeTimer);
 							clearInterval(that.loginTimer);
 							let permissions = resp.permissions;
+              let token = resp.token;
+              console.log(token)
 							localStorage.setItem('permissions', permissions);
+              localStorage.setItem('token', token);
 							router.push({ name: 'Home' });
 						}
 					});

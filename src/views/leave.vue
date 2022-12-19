@@ -15,7 +15,7 @@
 				<el-select
 					v-model="dataForm.deptId"
 					class="input"
-					placeholder="部门"
+					placeholder="课程"
 					size="medium"
 					:disabled="!isAuth(['ROOT', 'LEAVE:SELECT'])"
 					clearable="clearable"
@@ -29,32 +29,32 @@
 					style="width: 160px;"
 					type="date"
 					size="medium"
-					placeholder="请假日期"
+					placeholder="打卡时间"
 					clearable="clearable"
 				></el-date-picker>
 			</el-form-item>
 			<el-form-item>
-				<el-select v-model="dataForm.type" class="input" placeholder="类型" size="medium" clearable="clearable">
-					<el-option label="病假" value="1"></el-option>
-					<el-option label="事假" value="2"></el-option>
+				<el-select v-model="dataForm.type" class="input" placeholder="打卡方式" size="medium" clearable="clearable">
+					<el-option label="小程序" value="1"></el-option>
+					<el-option label="网页" value="2"></el-option>
 				</el-select>
 			</el-form-item>
 			<el-form-item>
 				<el-select
 					v-model="dataForm.status"
 					class="input"
-					placeholder="状态"
+					placeholder="打卡情况"
 					size="medium"
 					clearable="clearable"
 				>
-					<el-option label="请假中" value="1"></el-option>
-					<el-option label="不同意" value="2"></el-option>
-					<el-option label="已同意" value="3"></el-option>
+					<el-option label="已打卡" value="1"></el-option>
+					<el-option label="未打卡" value="2"></el-option>
+					<el-option label="打卡异常" value="3"></el-option>
 				</el-select>
 			</el-form-item>
 			<el-form-item>
 				<el-button @click="searchHandle()" type="primary" size="medium">查询</el-button>
-				<el-button type="danger" size="medium" @click="addHandle()">我要请假</el-button>
+				<el-button type="danger" size="medium" @click="addHandle()">申请异常</el-button>
 			</el-form-item>
 		</el-form>
 		<el-table
@@ -76,19 +76,19 @@
 				</template>
 			</el-table-column>
 			<el-table-column prop="name" header-align="center" align="center" label="姓名" min-width="150" ></el-table-column>
-			<el-table-column prop="deptName" header-align="center" align="center" label="部门" min-width="150"></el-table-column>
+			<el-table-column prop="deptName" header-align="center" align="center" label="课程" min-width="150"></el-table-column>
 			<el-table-column prop="start" header-align="center" align="center" label="起始" min-width="180"></el-table-column>
 			<el-table-column prop="end" header-align="center" align="center" label="截止" min-width="180"></el-table-column>
-			<el-table-column prop="type" header-align="center" align="center" label="请假类型" min-width="150"></el-table-column>
+			<el-table-column prop="type" header-align="center" align="center" label="打卡情况" min-width="150"></el-table-column>
 
-			<el-table-column prop="status" header-align="center" align="center" label="请假状态" min-width="120">
+			<el-table-column prop="status" header-align="center" align="center" label="打卡时间" min-width="120">
 				<template #default="scope">
-					<span v-if="scope.row.status == '请假中'" style="color: orange;">{{ scope.row.status }}</span>
-					<span v-if="scope.row.status == '已同意'" style="color: #17B3A3;">{{ scope.row.status }}</span>
-					<span v-if="scope.row.status == '不同意'" style="color: #f56c6c;">{{ scope.row.status }}</span>
+					<span v-if="scope.row.status == '已打卡'" style="color: orange;">{{ scope.row.status }}</span>
+					<span v-if="scope.row.status == '未打卡'" style="color: #17B3A3;">{{ scope.row.status }}</span>
+					<span v-if="scope.row.status == '打卡异常'" style="color: #f56c6c;">{{ scope.row.status }}</span>
 				</template>
 			</el-table-column>
-			<el-table-column header-align="center" align="center" width="120" label="请假单" min-width="120">
+			<el-table-column header-align="center" align="center" width="120" label="提出人" min-width="120">
 				<template #default="scope">
 					<el-button
 						type="text"

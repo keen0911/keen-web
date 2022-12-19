@@ -44,7 +44,7 @@ const routes = [{
 				name: "Role",
 				component: Role,
 				meta: {
-					title: "角色管理",
+					title: "我的作业",
 					isTab: true
 				}
 			},
@@ -53,7 +53,7 @@ const routes = [{
 				name: 'User',
 				component: User,
 				meta: {
-					title: '用户管理',
+					title: '我的课程',
 					isTab: true
 				}
 			},
@@ -62,7 +62,7 @@ const routes = [{
 				name: 'Dept',
 				component: Dept,
 				meta: {
-					title: '部门管理',
+					title: '我的大学习',
 					isTab: true
 				}
 			},
@@ -71,7 +71,7 @@ const routes = [{
 				name: 'MeetingRoom',
 				component: MeetingRoom,
 				meta: {
-					title: '会议室',
+					title: '线下会议',
 					isTab: true
 				}
 			},
@@ -80,7 +80,7 @@ const routes = [{
 				name: 'OfflineMeeting',
 				component: OfflineMeeting,
 				meta: {
-					title: '线下会议',
+					title: '线下',
 					isTab: true
 				}
 			},
@@ -106,7 +106,7 @@ const routes = [{
 				name: 'Approval',
 				component: Approval,
 				meta: {
-					title: '在线审批',
+					title: '作业管理',
 					isTab: true
 				}
 			},
@@ -115,7 +115,7 @@ const routes = [{
 				name: 'Leave',
 				component: Leave,
 				meta: {
-					title: '员工请假',
+					title: '班级打卡记录',
 					isTab: true
 				}
 			},
@@ -124,7 +124,7 @@ const routes = [{
 				name: 'Amect',
 				component: Amect,
 				meta: {
-					title: '违纪罚款',
+					title: '大学习管理',
 					isTab: true
 				}
 			},
@@ -133,7 +133,7 @@ const routes = [{
 				name: 'AmectType',
 				component: AmectType,
 				meta: {
-					title: '罚款类型',
+					title: '班级状态',
 					isTab: true
 				}
 			},
@@ -142,7 +142,7 @@ const routes = [{
 				name: 'AmectReport',
 				component: AmectReport,
 				meta: {
-					title: '违纪报告',
+					title: '导出文件',
 					isTab: true
 				}
 			},
@@ -151,7 +151,7 @@ const routes = [{
 				name: 'Reim',
 				component: Reim,
 				meta: {
-					title: '报销管理',
+					title: '班费管理',
 					isTab: true
 				}
 			}

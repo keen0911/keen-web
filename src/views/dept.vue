@@ -4,7 +4,7 @@
 			<el-form-item prop="deptName">
 				<el-input
 					v-model="dataForm.deptName"
-					placeholder="部门名称"
+					placeholder="我的大学习搜索"
 					size="medium"
 					class="input"
 					clearable="clearable"
@@ -45,10 +45,10 @@
 					<span>{{ (pageIndex - 1) * pageSize + scope.$index + 1 }}</span>
 				</template>
 			</el-table-column>
-			<el-table-column prop="deptName" header-align="center" align="center" label="部门名称" min-width="170"/>
+			<el-table-column prop="deptName" header-align="center" align="center" label="日期" min-width="170"/>
 			<el-table-column prop="tel" header-align="center" align="center" label="联系电话" min-width="170"/>
 			<el-table-column prop="email" header-align="center" align="center" label="邮箱" min-width="270"/>
-			<el-table-column header-align="center" align="center" label="员工数量" min-width="140" >
+			<el-table-column header-align="center" align="center" label="提交数量" min-width="140" >
 				<template #default="scope">
 					<span>{{ scope.row.emps }}人</span>
 				</template>

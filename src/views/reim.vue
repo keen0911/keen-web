@@ -4,7 +4,7 @@
 			<el-form-item prop="name">
 				<el-input
 					v-model="dataForm.name"
-					placeholder="姓名"
+					placeholder="提出人"
 					size="medium"
 					class="input"
 					clearable="clearable"
@@ -14,7 +14,7 @@
 				<el-select
 					v-model="dataForm.deptId"
 					class="input"
-					placeholder="部门"
+					placeholder="主题"
 					size="medium"
 					clearable="clearable"
 				>
@@ -29,8 +29,8 @@
 					size="medium"
 					clearable="clearable"
 				>
-					<el-option label="普通报销" value="1" />
-					<el-option label="差旅报销" value="2" />
+					<el-option label="支出" value="1" />
+					<el-option label="收入" value="2" />
 				</el-select>
 			</el-form-item>
 			<el-form-item>
@@ -42,9 +42,8 @@
 					clearable="clearable"
 				>
 					<el-option label="待审批" value="1" />
-					<el-option label="已否决" value="2" />
 					<el-option label="已同意" value="3" />
-					<el-option label="已归档" value="4" />
+					<el-option label="已支付" value="4" />
 				</el-select>
 			</el-form-item>
 			<el-form-item>
@@ -111,7 +110,7 @@
 				prop="type"
 				header-align="center"
 				align="center"
-				label="报销类型"
+				label="类型"
 				min-width="150"
 			/>
 			<el-table-column
@@ -125,22 +124,17 @@
 				prop="deptName"
 				header-align="center"
 				align="center"
-				label="所属部门"
+				label="主题"
 				width="150"
 			/>
-			<el-table-column header-align="center" align="center" label="报销金额" min-width="120">
+			<el-table-column header-align="center" align="center" label="提出金额" min-width="120">
 				<template #default="scope">
 					<span>{{ scope.row.amount }}元</span>
 				</template>
 			</el-table-column>
-			<el-table-column header-align="center" align="center" label="借款金额" min-width="120">
+			<el-table-column header-align="center" align="center" label="支付金额" min-width="120">
 				<template #default="scope">
 					<span>{{ scope.row.anleihen }}元</span>
-				</template>
-			</el-table-column>
-			<el-table-column header-align="center" align="center" label="实际报销" min-width="120">
-				<template #default="scope">
-					<span>{{ scope.row.balance }}元</span>
 				</template>
 			</el-table-column>
 			<el-table-column

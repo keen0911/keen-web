@@ -4,8 +4,8 @@
 			<el-col :span="9" class="left">
 				<h2>keen智慧校园</h2>
 				<div class="desc">
-					<p>轻松工作&nbsp;&nbsp;高效办公</p>
-					<p>协同办公&nbsp;&nbsp;让工作更简单</p>
+					<p>针对服务&nbsp;&nbsp;高效解决</p>
+					<p>协同参与&nbsp;&nbsp;让校园生活更简单</p>
 				</div>
 				<div class="bottom">
 					<div class="remark-container">

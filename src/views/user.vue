@@ -4,16 +4,16 @@
 			<el-form-item prop="name">
 				<el-input
 					v-model="dataForm.name"
-					placeholder="姓名"
+					placeholder="周次"
 					size="medium"
 					class="input"
 					clearable="clearable"
 				/>
 			</el-form-item>
 			<el-form-item>
-				<el-select v-model="dataForm.sex" class="input" placeholder="性别" size="medium" clearable="clearable">
-					<el-option label="男" value="男" />
-					<el-option label="女" value="女" />
+				<el-select v-model="dataForm.sex" class="input" placeholder="课程名称" size="medium" clearable="clearable">
+					<el-option label="嵌入式" value="嵌入式" />
+					<el-option label="APP开发" value="APP开发" />
 				</el-select>
 			</el-form-item>
 			<el-form-item>
@@ -25,7 +25,7 @@
 				<el-select
 					v-model="dataForm.deptId"
 					class="input"
-					placeholder="部门"
+					placeholder="学校"
 					size="medium"
 					clearable="clearable"
 				>
@@ -36,12 +36,12 @@
 				<el-select
 					v-model="dataForm.status"
 					class="input"
-					placeholder="状态"
+					placeholder="课表状态"
 					size="medium"
 					clearable="clearable"
 				>
-					<el-option label="在职" value="1" />
-					<el-option label="离职" value="2" />
+					<el-option label="已更新" value="1" />
+					<el-option label="未更新" value="2" />
 				</el-select>
 			</el-form-item>
 			<el-form-item>
@@ -79,27 +79,27 @@
 					<span>{{ (pageIndex - 1) * pageSize + scope.$index + 1 }}</span>
 				</template>
 			</el-table-column>
-			<el-table-column prop="name" header-align="center" align="center" min-width="100" label="姓名" />
-			<el-table-column prop="sex" header-align="center" align="center" min-width="60" label="性别" />
-			<el-table-column prop="tel" header-align="center" align="center" min-width="130" label="电话" />
+			<el-table-column prop="name" header-align="center" align="center" min-width="100" label="周一" />
+			<el-table-column prop="sex" header-align="center" align="center" min-width="60" label="周二" />
+			<el-table-column prop="tel" header-align="center" align="center" min-width="130" label="周三" />
 			<el-table-column
 				prop="email"
 				header-align="center"
 				align="center"
 				min-width="240"
-				label="邮箱"
+				label="周四"
 				:show-overflow-tooltip="true"
 			/>
-			<el-table-column prop="hiredate" header-align="center" align="center" min-width="130" label="入职日期" />
+			<el-table-column prop="hiredate" header-align="center" align="center" min-width="130" label="周五" />
 			<el-table-column
 				prop="roles"
 				header-align="center"
 				align="center"
 				min-width="150"
-				label="角色"
+				label="周六"
 				:show-overflow-tooltip="true"
 			/>
-			<el-table-column prop="dept" header-align="center" align="center" min-width="120" label="部门" />
+			<el-table-column prop="dept" header-align="center" align="center" min-width="120" label="周日" />
 			<el-table-column prop="status" header-align="center" align="center" min-width="100" label="状态" />
 			<el-table-column header-align="center" align="center" width="150" label="操作">
 				<template #default="scope">

@@ -4,7 +4,7 @@
             <el-form-item prop="roleName">
                 <el-input
                     v-model="dataForm.roleName"
-                    placeholder="角色名称"
+                    placeholder="我的作业搜索"
                     size="medium"
                     class="input"
                     clearable="clearable"
@@ -51,19 +51,19 @@
                     <span>{{ (pageIndex - 1) * pageSize + scope.$index + 1 }}</span>
                 </template>
             </el-table-column>
-            <el-table-column prop="roleName" header-align="center" align="center" label="角色名称" min-width="180"/>
-            <el-table-column header-align="center" align="center" label="权限数量" min-width="140">
+            <el-table-column prop="roleName" header-align="center" align="center" label="作业名称" min-width="180"/>
+            <el-table-column header-align="center" align="center" label="提交文件" min-width="140">
                 <template #default="scope">
                     <span>{{ scope.row.permissions }}个</span>
                 </template>
             </el-table-column>
-            <el-table-column prop="users" header-align="center" align="center" label="关联用户" min-width="140">
+            <el-table-column prop="users" header-align="center" align="center" label="提出人" min-width="140">
                 <template #default="scope">
                     <span>{{ scope.row.users }}人</span>
                 </template>
             </el-table-column>
             <el-table-column prop="desc" header-align="center" align="center" label="备注" min-width="450" />
-            <el-table-column prop="systemic" header-align="center" align="center" label="内置角色" min-width="100">
+            <el-table-column prop="systemic" header-align="center" align="center" label="提交时间" min-width="100">
                 <template #default="scope">
                     <span>{{ scope.row.systemic ? '是' : '否' }}</span>
                 </template>

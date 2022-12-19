@@ -53,7 +53,7 @@
 				</template>
 			</el-table-column>
 			<el-table-column prop="name" header-align="center" align="center" min-width="150" label="会议室名称" />
-			<el-table-column header-align="center" align="center" min-width="120" label="人数上限">
+			<el-table-column header-align="center" align="center" min-width="120" label="时常">
 				<template #default="scope">
 					<span>{{ scope.row.max }}人</span>
 				</template>
@@ -63,7 +63,7 @@
 					<span>{{ scope.row.status == 1 ? '可使用' : '已停用' }}</span>
 				</template>
 			</el-table-column>
-			<el-table-column prop="desc" header-align="center" align="center" label="备注" min-width="400" />
+			<el-table-column prop="desc" header-align="center" align="center" label="时间" min-width="400" />
 			<el-table-column header-align="center" align="center" width="150" label="操作">
 				<template #default="scope">
 					<el-button

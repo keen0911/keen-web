@@ -4,7 +4,7 @@
 			<el-form-item prop="type">
 				<el-input
 					v-model="dataForm.type"
-					placeholder="类型名称"
+					placeholder="班级查询"
 					size="medium"
 					class="input"
 					clearable="clearable"
@@ -37,18 +37,18 @@
 					<span>{{ (pageIndex - 1) * pageSize + scope.$index + 1 }}</span>
 				</template>
 			</el-table-column>
-			<el-table-column prop="type" header-align="center" align="center" label="罚款类型" />
-			<el-table-column header-align="center" align="center" label="罚款金额">
+			<el-table-column prop="type" header-align="center" align="center" label="班级名称" />
+			<el-table-column header-align="center" align="center" label="班级人数">
 				<template #default="scope">
 					<span>{{ scope.row.money }}元</span>
 				</template>
 			</el-table-column>
-			<el-table-column header-align="center" align="center" label="系统自带">
+			<el-table-column header-align="center" align="center" label="班级状态">
 				<template #default="scope">
 					<span>{{ scope.row.systemic ? '是' : '否' }}</span>
 				</template>
 			</el-table-column>
-			<el-table-column header-align="center" align="center" label="未缴罚款数量">
+			<el-table-column header-align="center" align="center" label="状态正常人数">
 				<template #default="scope">
 					<span>{{ scope.row.notPay == 0 ? '--' : scope.row.notPay + '个' }}</span>
 				</template>

@@ -2,26 +2,25 @@
 	<div v-if="isAuth(['ROOT', 'WORKFLOW:APPROVAL', 'FILE:ARCHIVE'])">
 		<el-form :inline="true" :model="dataForm" :rules="dataRule" ref="dataForm" @keyup.enter.native="searchHandle()">
 			<el-form-item prop="creatorName">
-				<el-input v-model="dataForm.creatorName" size="medium" placeholder="申请人" clearable="clearable" />
+				<el-input v-model="dataForm.creatorName" size="medium" placeholder="查询姓名" clearable="clearable" />
 			</el-form-item>
 			<el-form-item prop="type">
-				<el-select v-model="dataForm.type" placeholder="类别" size="medium" clearable="clearable">
-					<el-option label="会议申请" value="会议申请"></el-option>
-					<el-option label="员工请假" value="员工请假"></el-option>
-					<el-option label="报销申请" value="报销申请"></el-option>
+				<el-select v-model="dataForm.type" placeholder="作业类别" size="medium" clearable="clearable">
+					<el-option label="电子作业" value="电子作业"></el-option>
+					<el-option label="纸质作业" value="纸质作业"></el-option>
 				</el-select>
 			</el-form-item>
 			<el-form-item prop="instanceId">
-				<el-input v-model="dataForm.instanceId" size="medium" placeholder="实例编号" clearable="clearable" />
+				<el-input v-model="dataForm.instanceId" size="medium" placeholder="作业编号" clearable="clearable" />
 			</el-form-item>
 			<el-form-item>
 				<el-button type="primary" size="medium" @click="searchHandle()">查询</el-button>
 			</el-form-item>
 			<el-form-item class="mold">
 				<el-radio-group v-model="dataForm.status" size="medium" @change="searchHandle()">
-					<el-radio-button label="待审批"></el-radio-button>
-					<el-radio-button label="已审批"></el-radio-button>
-					<el-radio-button label="已结束"></el-radio-button>
+					<el-radio-button label="待检查"></el-radio-button>
+					<el-radio-button label="已通过"></el-radio-button>
+					<el-radio-button label="已退回"></el-radio-button>
 				</el-radio-group>
 			</el-form-item>
 		</el-form>
@@ -147,13 +146,13 @@
 				label="序号"
 				width="100"
 			/>
-			<el-table-column prop="title" header-align="center" align="center" label="审批事项" min-width="400"/>
-			<el-table-column prop="type" header-align="center" align="center" label="类别" min-width="180" />
-			<el-table-column prop="creatorName" header-align="center" align="center" label="申请人" min-width="150" />
+			<el-table-column prop="title" header-align="center" align="center" label="姓名" min-width="400"/>
+			<el-table-column prop="type" header-align="center" align="center" label="作业类别" min-width="180" />
+			<el-table-column prop="creatorName" header-align="center" align="center" label="发起者" min-width="150" />
 			<el-table-column prop="createDate" header-align="center" align="center" label="发起日期" min-width="180" />
 			<el-table-column prop="status" header-align="center" align="center" label="状态" min-width="150">
 				<template #default="scope">
-					<span v-if="scope.row.status!='已结束'" style="color: orange;">审批中</span>
+					<span v-if="scope.row.status!='已结束'" style="color: orange;">检查中</span>
 					<span v-if="scope.row.status=='已结束'&&scope.row.result=='同意'" style="color: #17B3A3;">已同意</span>
 					<span v-if="scope.row.status=='已结束'&&scope.row.result=='不同意'" style="color: #f56c6c;">已拒绝</span>
 					
